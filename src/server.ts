@@ -4,6 +4,7 @@ import salaryRoutes from './api/v1/routes/salaryRoutes';
 import db from './config/db';
 import swaggerUi from 'swagger-ui-express';
 import { getSwaggerSpec } from './swagger';
+import { OpenAPIV3 } from 'openapi-types';
 
 dotenv.config();
 
@@ -42,7 +43,9 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
 async function startServer() {
   try {
-    // await setupSwaggerDocs();
+    const swaggerSpec: OpenAPIV3.Document = await getSwaggerSpec();
+
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
     app.listen(PORT, () => {
       console.log(`Server is running at ${PORT}`);

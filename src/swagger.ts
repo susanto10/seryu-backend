@@ -2,6 +2,7 @@ import SwaggerParser from '@apidevtools/swagger-parser';
 import path from 'path';
 import { OpenAPIV3 } from 'openapi-types';
 
+// console.log(process.cwd());
 const openApiEntryPoint = path.resolve(
   process.cwd(),
   'docs_api/v1/openapi.yaml'

@@ -1,19 +1,19 @@
 # seryu-backend
 
-`seryu-backend` adalah RESTful API backend yang dibangun menggunakan **Node.js**, **TypeScript**, dan **Express**. Proyek ini menyediakan endpoint terkait perhitungan gaji supir serta dokumentasi API menggunakan Swagger UI.
+`seryu-backend` is a RESTful API backend built with **Node.js**, **TypeScript**, and **Express**. This project provides endpoints related to truck driver salary calculations along with API documentation using Swagger UI.
 
 ## 🧱 Tech Stack
 
 - **Node.js + Express**
 - **TypeScript**
 - **PostgreSQL** + **Knex**
-- **Swagger UI** untuk dokumentasi API
-- **dotenv** untuk konfigurasi environment
-- **Nodemon** & **Concurrently** untuk development
+- **Swagger UI** for API documentation
+- **dotenv** for environment configuration
+- **Nodemon** & **Concurrently** for development
 
-## 📦 Instalasi
+## 📦 Installation
 
-1. **Clone repository**
+1. **Clone the repository**
 
    ```bash
    git clone https://github.com/your-username/seryu-backend.git
@@ -26,26 +26,26 @@
    npm install
    ```
 
-3. **Konfigurasi environment**
+3. **Configure environment variables**
 
-   Buat file `.env` di root dengan isi seperti berikut:
+   Create a `.env` file in the root directory with the following content:
 
    ```env
    PORT=3000
    DATABASE_URL=postgresql://user:password@localhost:5432/db_name
    ```
 
-## 🔧 Perintah Penting
+## 🔧 Useful Commands
 
-| Perintah           | Deskripsi                                        |
-|--------------------|--------------------------------------------------|
-| `npm run dev`       | Menjalankan server dengan watch mode (development) |
-| `npm run build`     | Compile TypeScript ke JavaScript                |
-| `npm start`         | Menjalankan server dari hasil build (`dist`)     |
-| `npm run db:migrate`| Menjalankan migrasi database                    |
-| `npm run db:seed`   | Menjalankan seeder untuk database               |
+| Command              | Description                                      |
+|----------------------|--------------------------------------------------|
+| `npm run dev`        | Run the server in watch mode (development)       |
+| `npm run build`      | Compile TypeScript to JavaScript                 |
+| `npm start`          | Run the server from the compiled output (`dist`) |
+| `npm run db:migrate` | Run database migrations                          |
+| `npm run db:seed`    | Run database seeders                             |
 
-## 📁 Struktur Folder
+## 📁 Project Structure
 
 ```
 src/
@@ -63,26 +63,22 @@ src/
 └── server.ts
 ```
 
-## 📚 Dokumentasi API
+## 📚 API Documentation
 
-Swagger UI tersedia di:
+Swagger UI is available at:
 
 ```
 http://localhost:3000/api-docs
 ```
 
-## 🔌 Endpoint Utama
+## 🔌 Main Endpoints
 
-- `GET /health` — Mengecek status server
-- `GET /api/v1/salary/...` — Endpoint terkait gaji supir (lihat dokumentasi Swagger untuk detail)
+- `GET /health` — Check server status
+- `GET /api/v1/salary/...` — Salary-related endpoints (see Swagger docs for details)
 
 ## 🐞 Error Handling
 
-API ini memiliki error handler global untuk:
+This API includes a global error handler for:
 
 - **404 Not Found**
 - **500 Internal Server Error**
-
-## 📝 Lisensi
-
-Proyek ini menggunakan lisensi **ISC**.
