@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info:
+  title: Seryu Backend API
+  version: v1
+  description: API documentation for Seryu Backend.
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Development Server
+paths:
+  /salary/driver/list:
+    $ref: './paths/salary-driver-list.yaml'
+components:
+  schemas:
+    DriverSalary:
+      $ref: './components/schemas/DriverSalary.yaml'
+    DriverSalaryListResponse:
+      $ref: './components/schemas/DriverSalaryListResponse.yaml'

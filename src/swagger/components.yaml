@@ -1,0 +1,25 @@
+schemas:
+  DriverSalary:
+    type: object
+    properties:
+      driver_code:
+        type: string
+      name:
+        type: string
+      total_pending:
+        type: number
+        format: float
+      total_confirmed:
+        type: number
+        format: float
+      total_paid:
+        type: number
+        format: float
+      total_attendance_salary:
+        type: number
+        format: float
+      total_salary:
+        type: number
+        format: float
+      count_shipment:
+        type: integer

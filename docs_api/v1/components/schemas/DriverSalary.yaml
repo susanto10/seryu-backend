@@ -1,0 +1,45 @@
+type: object
+description: Schema for driver salary details.
+properties:
+  driver_code:
+    type: string
+    description: "Unique code for the driver"
+    example: "DRV-00123"
+  name:
+    type: string
+    description: Full name of the driver.
+    example: "Budi Santoso"
+  total_pending:
+    type: number
+    format: double
+    description: Total amount of salary that is still pending confirmation.
+    example: 1500000.50
+  total_confirmed:
+    type: number
+    format: double
+    description: Total amount of salary that has been confirmed and is ready for payment.
+    example: 2000000.00
+  total_paid:
+    type: number
+    format: double
+    description: Total amount of salary that has been successfully paid to the driver.
+    example: 5000000.75
+  total_attendance_salary:
+    type: number
+    format: double
+    description: Salary component derived from attendance.
+    example: 1000000.00
+  total_salary:
+    type: number
+    format: double
+    description: Overall total salary for the driver for a specific period.
+    example: 8500000.25
+  count_shipment:
+    type: integer
+    format: int32
+    description: Total number of successful shipments completed by the driver in the salary period.
+    example: 25
+required:
+  - driver_code
+  - name
+  - total_salary

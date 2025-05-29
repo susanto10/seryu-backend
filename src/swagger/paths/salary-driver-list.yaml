@@ -1,0 +1,63 @@
+get:
+  summary: Get list of driver salaries
+  tags:
+    - Salary
+  parameters:
+    - in: query
+      name: month
+      required: true
+      schema:
+        type: integer
+    - in: query
+      name: year
+      required: true
+      schema:
+        type: integer
+    - in: query
+      name: pageSize
+      required: true
+      schema:
+        type: integer
+    - in: query
+      name: current
+      required: true
+      schema:
+        type: integer
+    - in: query
+      name: offset
+      required: true
+      schema:
+        type: integer
+    - in: query
+      name: driver_code
+      schema:
+        type: string
+    - in: query
+      name: name
+      schema:
+        type: string
+    - in: query
+      name: status
+      schema:
+        type: string
+        enum: [PENDING, CONFIRMED, PAID]
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DriverSalary'
+              total_row:
+                type: integer
+              current:
+                type: integer
+              page_size:
+                type: integer
+    '500':
+      description: Server error

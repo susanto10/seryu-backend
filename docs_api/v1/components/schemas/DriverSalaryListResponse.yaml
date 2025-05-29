@@ -1,0 +1,25 @@
+type: object
+description: Response structure for the driver salary list.
+properties:
+  data:
+    type: array
+    items:
+      $ref: '../../openapi.yaml#/components/schemas/DriverSalary'
+    description: List of driver salary records.
+  total_row:
+    type: integer
+    description: Total number of records matching the query.
+    example: 35
+  current:
+    type: integer
+    description: The current page number.
+    example: 1
+  page_size:
+    type: integer
+    description: The number of items per page.
+    example: 10
+required:
+  - data
+  - total_row
+  - current
+  - page_size
